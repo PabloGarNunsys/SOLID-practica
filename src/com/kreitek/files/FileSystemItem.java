@@ -1,23 +1,30 @@
 package com.kreitek.files;
 
-import java.util.List;
-
 public interface FileSystemItem {
     String getName();
     void setName(String name);
     FileSystemItem getParent();
     void setParent(FileSystemItem directory);
     String getFullPath();
-    String getExtension();
-    List<FileSystemItem> listFiles();
-    void addFile(FileSystemItem file);
-    void removeFile(FileSystemItem file);
     int getSize();
-    void open();
-    void close();
-    void setPosition(int numberOfBytesFromBeginning);
-    byte[] read(int numberOfBytesToRead);
-    void write(byte[] buffer);
-
 
 }
+// * public interface FileSystemItem {
+    // String getName();
+    // void setName(String name);
+    // FileSystemItem getParent();
+    // void setParent(FileSystemItem directory);
+    // String getFullPath();
+    // int getSize();
+    // List<FileSystemItem> listFiles(); // Directory
+    // void addFile(FileSystemItem file); // Directory
+    // void removeFile(FileSystemItem file); // Directory
+    // String getExtension(); // File
+    // void open(); // File
+    // void close(); // File
+    // void setPosition(int numberOfBytesFromBeginning); // File
+    // byte[] read(int numberOfBytesToRead); // File
+    // void write(byte[] buffer); // File
+
+
+// * }

@@ -1,15 +1,15 @@
 package com.kreitek.files;
 
-import java.util.List;
 
+// Implementar Composite para crear el FileSystem
 public abstract class FileSystemItemBase implements FileSystemItem {
     protected static final String PATH_SEPARATOR = "/";
     protected String name;
     protected FileSystemItem parent;
 
     protected FileSystemItemBase(FileSystemItem parent, String name) {
-        setName(name);
-        setParent(parent);
+        this.name = name;
+        this.parent = parent;
     }
 
     @Override
@@ -30,6 +30,7 @@ public abstract class FileSystemItemBase implements FileSystemItem {
         return parent;
     }
 
+    // public abstract void setParent(FileSystemItem directory);
     @Override
     public void setParent(FileSystemItem directory) {
         if (directory != null && !(directory instanceof Directory)) {
@@ -54,25 +55,6 @@ public abstract class FileSystemItemBase implements FileSystemItem {
     }
 
     @Override
-    public abstract String getExtension();
-
-    @Override
-    public abstract List<FileSystemItem> listFiles();
-
-    @Override
     public abstract int getSize();
 
-    @Override
-    public abstract void open();
-
-    @Override
-    public abstract void setPosition(int numberOfBytesFromBeginning);
-
-    @Override
-    public abstract byte[] read(int numberOfBytesToRead);
-
-    @Override
-    public abstract void write(byte[] buffer);
-
-    public abstract void close();
 }
